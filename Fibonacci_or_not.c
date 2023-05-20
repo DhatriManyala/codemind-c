@@ -1,22 +1,26 @@
 #include<stdio.h>
 int main()
 {
-    int a=0,b=1;
-    int n;
-    scanf("%d",&n);
-    int fib=0;
-    while(a<=n)
+    int arr[100],a=0,b=1,c;
+    for(int i=0;i<100;i++)
     {
-        if(a==n)
-        {
-            fib=1;
-            break;
-        }
-        int c=a+b;
+        arr[i]=a;
+        c=a+b;
         a=b;
         b=c;
     }
-    if(fib==1)
+    int n;
+    scanf("%d",&n);
+    int co=0;
+    for(int i=0;i<n;i++)
+    {
+        if(arr[i]==n)
+        {
+            co=1;
+            break;
+        }
+    }
+    if(co==1)
     {
         printf("True");
     }
