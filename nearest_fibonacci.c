@@ -1,24 +1,40 @@
 #include<stdio.h>
 int main()
 {
-    int a=0,b=1,c=0,n;
-    scanf("%d",&n);
-    while(n>c)
+    int a;
+    scanf("%d",&a);
+    int arr[100],i,j;
+    int fa=0,fb=1,temp;
+    for (i=0; i<100; i++)
     {
-        c=a+b;
-        a=b;
-        b=c;
+        arr[i]=fa;
+        temp=fa+fb;
+        fa=fb;
+        fb=temp;
     }
-    if(n-a<b-n)
+    int dl=0,df=0,fib=0;
+    for (i=0; i<100; i++)
     {
-        printf("%d ",a);
+        if (arr[i]>a)
+        {
+            dl=arr[i]-a;
+            df=a-arr[i-1];
+            if (dl==df)
+            {
+                printf("%d %d",arr[i-1],arr[i]);
+            }
+            else if (dl>df)
+            {
+                fib=i-1;
+                printf("%d",arr[fib]);
+            }
+            else
+            {
+                fib=i;
+                printf("%d",arr[fib]);
+            }
+            break;
+        }
     }
-    else if(n-a==b-n)
-    {
-        printf("%d %d",a,b);
-    }
-    else
-    {
-        printf("%d ",b);
-    }
+    return 0;
 }
