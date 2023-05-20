@@ -1,13 +1,33 @@
 #include<stdio.h>
+int add(int x)
+{
+	int sum=0,r;
+	while (1>0)
+	{
+		sum=0;
+		while (x>0)
+		{
+			r=x%10;
+			sum+=r;
+			x=x/10;
+		}
+		if (sum>9)
+		{
+			x=sum;
+			continue;
+		}
+		else
+		{
+			break;
+		}
+	}
+	return sum;
+}
 int main()
 {
-    int n,r;
-    scanf("%d",&n);
-    while(n>9)
-    {
-        r=n%10;
-        n=n/10;
-        n=n+r;
-    }
-    printf("%d",n);
+	int a,res;
+	scanf("%d",&a);
+	res=add(a);
+	printf("%d",res);
+	return 0;
 }
