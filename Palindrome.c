@@ -1,21 +1,16 @@
 #include<stdio.h>
-int rev(int n)
-{
-    int r,re=0;
-    while(n>0)
-    {
-        r=n%10;
-        re=(re*10)+r;
-        n=n/10;
-    }
-    return re;
-}
 int main()
 {
-    int n;
+    int n,r,s=0,q;
     scanf("%d",&n);
-    int r=rev(n);
-    if(n==r)
+    q=n;
+    while(q!=0)
+    {
+        r=q%10;
+        s=s*10+r;
+        q=q/10;
+    }
+    if(s==n)
     {
         printf("True");
     }
