@@ -1,49 +1,32 @@
 #include<stdio.h>
 int main()
 {
-    int a,flag=0;
-    scanf("%d",&a);
-    if (a>0)
+    int n,x=0;
+    scanf("%d",&n);
+    while(n!=1)
     {
-        while (a>0)
+        if(n%2==0)
         {
-            if (a%2==0)
-            {
-                a/=2;
-            }
-            else if (a%3==0)
-            {
-                a/=3;
-            }
-            else if (a%5==0)
-            {
-                a/=5;
-            }
-            else
-            {
-                flag=1;
-                break;
-            }
+            n=n/2;
         }
-        if (flag==1)
+        else if (n%3==0)
         {
-            if (a==1)
-            {
-                printf("Ugly Number");
-            }
-            else
-            {   
-                printf("Not Ugly Number");
-            }
+            n=n/3;
+        }
+        else if (n%5==0)
+        {
+            n=n/5;
         }
         else
         {
-            printf("Ugly Number");
+            printf("Not Ugly Number");
+            x=1;
+            break;
         }
-    }
-    else
+    }    
+    if(x==0)
     {
-        printf("Not Ugly Number");
+        printf("Ugly Number");
     }
     return 0;
 }
