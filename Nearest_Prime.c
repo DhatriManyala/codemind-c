@@ -25,7 +25,6 @@ int main()
 	}
 	
 }
-
 int is_prime(int m)
 {
 		int	fc=0,i;
